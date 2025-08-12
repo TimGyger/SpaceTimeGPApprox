@@ -11,7 +11,7 @@
 library(gpboost)
 library(scoringRules)
 
-data_solution <- read.csv(paste0(path,"2a-solutions.csv"))
+data_solution <- read.csv("https://raw.githubusercontent.com/TimGyger/SpaceTimeGPApprox/refs/heads/main/Data/2a-solutions.csv")
 
 vec_vecchia_RMSE <- rep(0,9) 
 vec_vecchia_corr_RMSE <- rep(0,9)
@@ -118,6 +118,7 @@ for (i in 1:9) {
   
   
 }
+
 
 
 
