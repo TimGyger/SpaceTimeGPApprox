@@ -52,7 +52,7 @@ for (i in 1:9) {
   pred_mu <- pred_Linear_Model$mu
   pred_var <- pred_Linear_Model$var
   vec_vecchia_time[i] <- proc.time() - ptm
-  vec_vecchia_RMSE[i] <- sqrt(mean((pred_t-(y_test))^2))
+  vec_vecchia_RMSE[i] <- sqrt(mean((pred_mu-(y_test))^2))
   vec_vecchia_CRPS[i] <- mean(crps_norm(y = y_test,mean = pred_mu,sd = sqrt(pred_var)))
   
   # Vecchia (correlation)
@@ -67,7 +67,7 @@ for (i in 1:9) {
   pred_mu <- pred_Linear_Model$mu
   pred_var <- pred_Linear_Model$var
   vec_vecchia_corr_time[i] <- proc.time() - ptm
-  vec_vecchia_corr_RMSE[i] <- sqrt(mean((pred_t-(y_test))^2))
+  vec_vecchia_corr_RMSE[i] <- sqrt(mean((pred_mu-(y_test))^2))
   vec_vecchia_corr_CRPS[i] <- mean(crps_norm(y = y_test,mean = pred_mu,sd = sqrt(pred_var)))
   
   # FITC (kmeans++)
@@ -82,7 +82,7 @@ for (i in 1:9) {
   pred_mu <- pred_Linear_Model$mu
   pred_var <- pred_Linear_Model$var
   vec_fitc_time[i] <- proc.time() - ptm
-  vec_fitc_RMSE[i] <- sqrt(mean((pred_t-(y_test))^2))
+  vec_fitc_RMSE[i] <- sqrt(mean((pred_mu-(y_test))^2))
   vec_fitc_CRPS[i] <- mean(crps_norm(y = y_test,mean = pred_mu,sd = sqrt(pred_var)))
   
   # FITC (kmeans++-grid)
@@ -97,7 +97,7 @@ for (i in 1:9) {
   pred_mu <- pred_Linear_Model$mu
   pred_var <- pred_Linear_Model$var
   vec_fitc_grid_time[i] <- proc.time() - ptm
-  vec_fitc_grid_RMSE[i] <- sqrt(mean((pred_t-(y_test))^2))
+  vec_fitc_grid_RMSE[i] <- sqrt(mean((pred_mu-(y_test))^2))
   vec_fitc_grid_CRPS[i] <- mean(crps_norm(y = y_test,mean = pred_mu,sd = sqrt(pred_var)))
   
   # VIF
@@ -113,11 +113,12 @@ for (i in 1:9) {
   pred_mu <- pred_Linear_Model$mu
   pred_var <- pred_Linear_Model$var
   vec_vif_time[i] <- proc.time() - ptm
-  vec_vif_RMSE[i] <- sqrt(mean((pred_t-(y_test))^2))
+  vec_vif_RMSE[i] <- sqrt(mean((pred_mu-(y_test))^2))
   vec_vif_CRPS[i] <- mean(crps_norm(y = y_test,mean = pred_mu,sd = sqrt(pred_var)))
   
   
 }
+
 
 
 
