@@ -222,3 +222,9 @@ KGZones <- kgc::LookupCZ(pts_sf_ll %>% select(id, geometry) %>%
                                                     rndCoord.lat  = RoundCoordinates(Latitude)) %>% select(id,Longitude,Latitude,rndCoord.lon,rndCoord.lat) )
 pts_sf_ll <- data.frame(pts_sf_ll %>% select(id),KGZones)
 dat_final_no_geom_zone <- dat_final_no_geom %>% left_join(pts_sf_ll, by = c("id"))
+
+##################
+## Keep only stations with history
+num_dates <- length(unique(dat_final_no_geom_zone$date))
+num_dates_95 <- round(num_dates * 0.95)
+dat_final_no_geom_zone <- dat_final_no_geom_zone %>% group_by(id) %>% mutate(count = n()) %>% filter(count > num_dates_95) %>% ungroup()
