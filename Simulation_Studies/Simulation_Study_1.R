@@ -114,10 +114,10 @@ for (ii in 1:num_rep) {
       y <- data[,4]
       coords <- data[,1:3]
       coords_train <- coords[1:10000,]
-      coords_test <- coords[10000:15000,]
+      coords_test <- coords[10001:15000,]
       
       y_train <- y[1:10000]
-      y_test <- y[10000:15000]
+      y_test <- y[10001:15000]
       
       gp_model <- fitGPModel(gp_coords = coords_train, cov_function = "space_time_gneiting", 
                              vecchia_ordering = "time_random_space",
