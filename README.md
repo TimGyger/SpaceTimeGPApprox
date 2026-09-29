@@ -1,6 +1,7 @@
 # Space-Time Gaussian Process Approximations
 
-This repository provides the R code for the simulation studies and real-world applications presented in the paper *"Scalable non-separable spatio-temporal Gaussian Process Models for large-scale Climate Data."*  
+This repository provides the R code for the simulation studies and real-world applications presented in the paper *"SCALABLE NON-SEPARABLE SPATIO-TEMPORAL GAUSSIAN PROCESS
+MODELS FOR LARGE-SCALE SHORT-TERM WEATHER PREDICTION."*  
 
 The iterative methods for full-scale approximations are implemented in the **GPBoost** package, available here: [https://github.com/fabsig/GPBoost](https://github.com/fabsig/GPBoost).
 
